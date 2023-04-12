@@ -1,10 +1,26 @@
 import "./styles.css";
+import Navigation from "./Navigation";
+import Home from "./Home";
+import Users from "./Users";
 
-export default function App() {
+import { Routes, Route } from "react-router-dom";
+
+const App = () => {
   return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-    </div>
+    <>
+      <h1>React Router</h1>
+
+      <Navigation />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="home" element={<Home />} />
+        <Route path="users" element={<Users />} />
+      </Routes>
+    </>
   );
-}
+};
+
+export default App;
+
+//https://www.robinwieruch.de/react-router/
