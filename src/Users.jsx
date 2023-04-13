@@ -1,8 +1,18 @@
-const Users = () => {
+import { Link } from "react-router-dom";
+
+const Users = ({ users }) => {
   return (
-    <main style={{ padding: "1rem 0" }}>
-      <h2>This is the users page</h2>
-    </main>
+    <>
+      <h2>Users</h2>
+
+      <ul>
+        {users.map((user) => (
+          <li key={user.id}>
+            <Link to={`/users/${user.id}`}>{user.fullName}</Link>
+          </li>
+        ))}
+      </ul>
+    </>
   );
 };
 
